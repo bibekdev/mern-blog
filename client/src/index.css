@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Gelasio&family=Inter:wght@400;500&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  * {
+    @apply m-0 p-0 box-border text-base outline-purple/30 duration-100;
+  }
+
+  html {
+    @apply overflow-x-hidden;
+  }
+
+  body {
+    @apply font-inter font-normal text-black;
+  }
+
+  ::selection {
+    @apply bg-purple/30;
+  }
+}
+
+@layer components {
+  section {
+    @apply py-4 px-[5vw] md:px-[7vw] lg:px-[10vw];
+  }
+
+  img {
+    @apply w-full h-full object-cover;
+  }
+
+  .btn-dark {
+    @apply whitespace-nowrap rounded-full py-3 px-6 text-xl capitalize bg-black text-white hover:bg-opacity-80;
+  }
+
+  .btn-light {
+    @apply btn-dark bg-grey text-black;
+  }
+
+  .hide {
+    @apply pointer-events-none opacity-0 invisible -translate-y-11;
+  }
+
+  .show {
+    @apply pointer-events-auto opacity-100 visible transition translate-y-0;
+  }
+
+  .h-cover {
+    @apply h-[calc(100vh-80px)];
+  }
+}
