@@ -1,0 +1,38 @@
+{
+  "name": "blog-api",
+  "version": "1.0.0",
+  "description": "This is a api for blogging website made with MERN technologies",
+  "main": "index.js",
+  "scripts": {
+    "prepare": "npx ts-patch install -s",
+    "dev": "ts-node-dev -r tsconfig-paths/register --transpile-only ./src/app.ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "argon2": "^0.31.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-async-errors": "^3.1.1",
+    "http-status": "^1.7.3",
+    "joi": "^17.11.0",
+    "jsonwebtoken": "^9.0.2",
+    "mongoose": "^8.0.1",
+    "nanoid": "^5.0.3",
+    "xid": "^0.0.2"
+  },
+  "devDependencies": {
+    "@types/cookie-parser": "^1.4.6",
+    "@types/cors": "^2.8.16",
+    "@types/jsonwebtoken": "^9.0.5",
+    "@types/node": "^20.9.2",
+    "ts-node-dev": "^2.0.0",
+    "ts-patch": "^3.0.2",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.2.2",
+    "typescript-transform-paths": "^3.4.6"
+  }
+}
