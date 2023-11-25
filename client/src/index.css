@@ -50,4 +50,8 @@
   .h-cover {
     @apply h-[calc(100vh-80px)];
   }
+
+  .link {
+    @apply hover:bg-grey text-dark-grey  hover:text-black p-3 px-4 block opacity-75;
+  }
 }

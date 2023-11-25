@@ -1,8 +1,11 @@
 import Input from '@/components/globals/Input'
 import AnimationWrapper from '@/components/globals/animation-wrapper'
+import { useAuth } from '@/hook/use-auth'
+import { api } from '@/services/api'
 import { useFormik } from 'formik'
 import { FiUser, FiLock, FiAtSign } from 'react-icons/fi'
 import { Link } from 'react-router-dom'
+import { toast } from 'react-toastify'
 import * as yup from 'yup'
 
 const formSchema = yup.object().shape({
@@ -18,14 +21,28 @@ const formSchema = yup.object().shape({
 })
 
 const SignUp = () => {
+  const { setUser } = useAuth()
   const form = useFormik({
     initialValues: {
       fullname: '',
       email: '',
       password: '',
     },
-    onSubmit: values => {
-      console.log(values)
+    onSubmit: async values => {
+      try {
+        const { data } = await api.post('/auth/login', values)
+        const user = {
+          id: data._id,
+          fullname: data.fullname,
+          email: data.email,
+          username: data.username,
+          profilePicture: data.profile_img,
+        }
+        localStorage.setItem('auth-user', JSON.stringify(user))
+        setUser(user)
+      } catch (error: any) {
+        if (error.response) toast.error(error.response.data.message)
+      }
     },
     validationSchema: formSchema,
   })
