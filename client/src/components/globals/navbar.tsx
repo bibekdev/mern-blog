@@ -18,7 +18,7 @@ const Navbar = () => {
 
   const { user } = useAuth()
   return (
-    <nav className='z-10 sticky top-0 border-b border-grey bg-white h-[80px] px-[5vw] py-5 flex items-center gap-12 w-full '>
+    <nav className='z-10 sticky top-0 border-b border-grey bg-white h-[80px] px-[5vw] py-5 flex items-center gap-12 w-full'>
       <Link to='/' className='flex-none w-10'>
         <img src='/logo.png' alt='logo' className='w-full' />
       </Link>
