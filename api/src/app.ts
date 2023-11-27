@@ -7,6 +7,7 @@ import dotenv from 'dotenv'
 import httpStatus from 'http-status'
 import { CustomError, IErrorResponse } from './helpers/error-handler'
 import appRoutes from './routes'
+import path from 'path'
 
 dotenv.config()
 
@@ -22,6 +23,7 @@ app.use(
   })
 )
 
+app.use('/uploads', express.static(path.join(__dirname, 'src', 'uploads')))
 app.use('/api/v1', appRoutes)
 // all rountes error handlers
 app.all('*', (req: Request, res: Response) => {

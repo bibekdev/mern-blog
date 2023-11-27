@@ -3,8 +3,9 @@ import { Schema, Document } from 'mongoose'
 export interface IBlogDocument extends Document {
   _id: Schema.Types.ObjectId | string
   title: string
+  slug: string
   banner?: string
-  des?: string
+  desc?: string
   content?: any[]
   tags?: string[]
   author: Schema.Types.ObjectId

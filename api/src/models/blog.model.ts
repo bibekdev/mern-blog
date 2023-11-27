@@ -7,15 +7,16 @@ const blogSchema: Schema<IBlogDocument> = new Schema(
       type: String,
       required: true,
     },
+    slug: { type: String, lowercase: true, required: true, unique: true },
     banner: {
       type: String,
     },
-    des: {
+    desc: {
       type: String,
       maxlength: 200,
     },
     content: {
-      type: [],
+      type: Object,
     },
     tags: {
       type: [String],

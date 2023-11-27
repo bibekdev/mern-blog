@@ -1,5 +1,5 @@
 import { useBlog } from '@/hook/use-blog'
-import { KeyboardEvent } from 'react'
+import { KeyboardEvent, MouseEventHandler } from 'react'
 import { FiX } from 'react-icons/fi'
 
 interface BlogTagProps {
@@ -10,7 +10,7 @@ interface BlogTagProps {
 const BlogTag: React.FC<BlogTagProps> = ({ tag, tagIndex }) => {
   const { blog, setBlog } = useBlog()
 
-  const addEditable: React.MouseEventHandler<HTMLParagraphElement> = e => {
+  const addEditable: MouseEventHandler<HTMLParagraphElement> = e => {
     const eventTarget = e.target as HTMLParagraphElement
     if (eventTarget) {
       eventTarget.setAttribute('contentEditable', 'true')

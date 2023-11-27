@@ -7,6 +7,12 @@ declare global {
       CLIENT_URL: string
     }
   }
+
+  namespace Express {
+    interface Request {
+      userId?: string
+    }
+  }
 }
 
 export {}
